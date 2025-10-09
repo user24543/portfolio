@@ -173,8 +173,21 @@
         `You can email me directly at <a href="mailto:hello@mxttia.it">hello@mxttia.it</a>`,
         "Or call me at +39 380 651 6673",
         "Have a nice evening",
-        "<span aria-label='signed'>&#126;</span> M.",
+       getGreeting(),
       ];
+
+
+
+      
+
+      
+      function getGreeting() {
+  const hour = new Date().getHours();
+  if(hour >= 5 && hour < 12) return "Morning";
+  if(hour >= 12 && hour < 17) return "Afternoon";
+  if(hour >= 17 && hour < 21) return "Evening";
+  return "Night";
+}
 
       const DELAY_BETWEEN = 1050; // ms (bubble delay)
       const TYPING_DURATION = 980; // ms
